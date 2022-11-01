@@ -15,12 +15,12 @@ body {
 }
 
 header {
-    padding: 32px 32px 0 32px;
+    margin: 32px 32px 0 32px;
     display: flex;
     align-items: center;
     align-content: center;
     justify-content: space-between;
-    
+
     .main-logo {
         height: 34px;
     }
@@ -30,8 +30,25 @@ header {
     }
 }
 
+main {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: 
+    "hero"
+    "upsell"
+    "press"
+    "showcase";
+
+    .hero,
+    .press,
+    .showcase {
+        padding: 0 32px;
+    }
+}
+
 .hero {
-    margin-left: 32px;
+    grid-area: hero;
     max-width: 274px;
     position: relative;
 
@@ -47,7 +64,6 @@ header {
     }
 
     h2 {
-        margin-top: 80px;
         color: $primary-color;
         text-transform: uppercase;
         font-size: 1rem;
@@ -88,4 +104,51 @@ header {
         background-clip: padding-box, border-box;
         cursor: pointer;
     }
+}
+
+.upsell {
+    max-width: 1280px;
+    grid-area: upsell;
+    margin-top: 80px;
+    padding: 120px 32px 32px 32px;
+    background: rgb(255,129,57);
+    background: linear-gradient(90deg, rgba(255,129,57,1) 60%, rgba(204,181,77,1) 100%);
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 16px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    p {
+        margin: 0;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+    }
+}
+
+.press {
+    grid-area: press;
+    
+}
+
+.showcase {
+    grid-area: showcase;
+}
+
+.footer__upsell {
+
+}
+
+.footer__menu {
+
+}
+
+footer {
+    padding: 0 32px;
 }
