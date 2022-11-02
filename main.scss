@@ -40,10 +40,8 @@ main {
     "press"
     "showcase";
 
-    .hero,
-    .press,
-    .showcase {
-        padding: 0 32px;
+    .hero {
+        margin: 0 32px;
     }
 }
 
@@ -53,12 +51,13 @@ main {
     position: relative;
 
     .graphic__background {
+        overflow: hidden;
         position: absolute;
         width: 100%;
         height: 100%;
-        top: -85px;
-        left: 165px;
-        background-size: 370px 400px;
+        top: -70px;
+        left: 150px;
+        background-size: 400px 400px;
         background-repeat: no-repeat;
         background-image: url(assets/graphic.png);
     }
@@ -107,7 +106,6 @@ main {
 }
 
 .upsell {
-    max-width: 1280px;
     grid-area: upsell;
     margin-top: 80px;
     padding: 120px 32px 32px 32px;
@@ -134,21 +132,277 @@ main {
 
 .press {
     grid-area: press;
+    display: grid;
+    grid-template-columns: auto-fit, minmax(250px, 600px);
+    grid-template-rows: 80px 80px 0;
+    margin-top: 70px;
+    padding: 0 32px;
     
+    .company-1 {
+        margin-left: -80px;
+    }
+
+    .company-5 {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+
 }
 
 .showcase {
     grid-area: showcase;
+    border-bottom: 1px solid #EEEEEE;
+    padding-bottom: 92px;
+    overflow: hidden;
+
+    .showcase__heading {
+        margin: 0 32px;
+    }
+
+    h2 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+        color: #555555;
+
+        .underline {
+            font-weight: 500;
+            border-bottom: 1px solid #555555;
+        }
+    }
+
+    .nfts__boxes {
+        margin-top: 40px;
+        display: flex;
+        gap: 40px;
+        width: 390px;
+        overflow-x: scroll;
+        white-space: nowrap;
+        padding-left: 32px;
+
+        .nft__box {
+            
+
+            .nft__box-bottom {
+                display: flex;
+                justify-content: space-between;
+                padding: 24px;
+                background-color: #EEEEEE;
+                border-radius: 0 0 16px 16px;
+                max-width: 290px;
+                margin-top: -5px;
+            }
+                
+            .nft__box--left_column {
+
+                .nft__rarity {
+                    text-transform: uppercase;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 100%;
+                    color: #FF8139;
+                    margin: 0;
+                }
+
+                .nft__title {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 100%;
+                    margin: 12px 0;
+                }
+
+                .nft__serial-number {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 100%;
+                    color: #777777;
+                }
+            }
+
+            .nft__box--right_column {
+                text-align: right;
+
+                .nft__bidder {
+                    text-transform: uppercase;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 100%;
+                    color: #777777;
+                    margin: 0;
+                }
+
+                .nft__price {
+                    display: block;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 100%;
+                    margin: 12px 0;
+                    justify-content: center;
+
+                    img {
+                        float: left;
+                        margin-right: 7px;
+                    }
+                }
+
+                .nft__auction-time {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 100%;
+                    color: #777777;
+                }
+            }
+        }
+    }
 }
 
 .footer__upsell {
+    margin-top: 64px;
+    padding-bottom: 58px;
+    position: relative;
+    border-bottom: 1px solid #EEEEEE;
+    padding-left: 32px;
 
+    .graphic__background--footer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 90px;
+        left: 120px;
+        background-size: 400px 430px;
+        background-repeat: no-repeat;
+        background-image: url(assets/upsell-footer-image.svg);
+    }
+
+    h2 {
+        color: $primary-color;
+        text-transform: uppercase;
+        font-size: 1rem;
+        line-height: 19px;
+        font-weight: 700;
+        font-style: normal;
+        letter-spacing: 0.1em;
+    }
+
+    .footer__upsell--heading {
+        margin: 24px 0;
+        font-size: 3rem;
+        line-height: 58px;
+        font-weight: 900;
+        font-style: normal;
+        width: 207px;
+    }
+
+    .footer__upsell--paragraph {
+        font-size: 1.25rem;
+        line-height: 150%;
+        font-weight: 400;
+        font-style: normal;
+        color: #555555;
+        margin-bottom: 30px;
+        width: 207px;
+    }
+
+    button {
+        font-size: 1.25rem;
+        line-height: 150%;
+        font-weight: 600;
+        color: #111111;
+        padding: 1rem 3rem;
+        border-radius: 50em;
+        border: double 4px transparent;
+        background-image: linear-gradient(#FFFFFF, #FFFFFF),
+        radial-gradient(circle at top left, #FF8139, #ccb54d);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+        cursor: pointer;
+    }
 }
 
 .footer__menu {
+    color: #555555;
+    margin-top: 66px;
+    padding: 0 32px;
 
+    .footer__heading {
+        margin-bottom: 60px;
+
+        h2 {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 100%;
+            margin: 32px 0;
+        }
+
+        .footer__heading--icons {
+            display: flex;
+            gap: 1rem;
+        }
+    }
+
+    .footer__navigation {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 60px;
+
+        div {
+            width: calc(100% / 2 - 10px);
+        }
+
+        h2 {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 0.1em;
+        }
+
+        ul {
+            padding-left: 0;
+        }
+
+        li {
+            list-style-type: none;
+            padding: 5px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #555555;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 100%;
+        }
+    }
 }
 
 footer {
-    padding: 0 32px;
+
+    .page__copyright {
+        padding-bottom: 105px;
+        span {
+            color: #999999;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 100%;
+        }
+    }
 }
