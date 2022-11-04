@@ -15,7 +15,7 @@ body {
 }
 
 header {
-    margin: 32px 32px 0 32px;
+    padding: 32px 32px 0 32px;
     display: flex;
     align-items: center;
     align-content: center;
@@ -31,7 +31,6 @@ header {
 }
 
 main {
-    margin-top: 80px;
     display: grid;
     grid-template-columns: auto;
     grid-template-areas: 
@@ -40,26 +39,26 @@ main {
     "press"
     "showcase";
 
-    .hero {
-        margin: 0 32px;
-    }
 }
 
 .hero {
+    padding: 80px 0 0 32px;
     grid-area: hero;
-    max-width: 274px;
     position: relative;
+    display: grid;
+    grid-template-columns: 274px;
+    overflow: hidden;
 
     .graphic__background {
-        overflow: hidden;
         position: absolute;
-        width: 100%;
-        height: 100%;
-        top: -70px;
-        left: 150px;
-        background-size: 400px 400px;
-        background-repeat: no-repeat;
-        background-image: url(assets/graphic.png);
+        left: 220px;
+        bottom: 80px;
+        
+
+        img {
+            width: 400px;
+            height: 400px;
+        }
     }
 
     h2 {
@@ -117,7 +116,7 @@ main {
         margin-bottom: 16px;
         font-style: normal;
         font-weight: 500;
-        font-size: 40px;
+        font-size: 36px;
         line-height: 48px;
     }
 
@@ -125,7 +124,7 @@ main {
         margin: 0;
         font-style: normal;
         font-weight: 400;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 150%;
     }
 }
@@ -157,6 +156,11 @@ main {
 
     .showcase__heading {
         margin: 0 32px;
+
+        a {
+            color: inherit;
+            text-underline-offset: 4px;
+        }
     }
 
     h2 {
@@ -173,20 +177,19 @@ main {
         line-height: 150%;
         color: #555555;
 
-        .underline {
-            font-weight: 500;
-            border-bottom: 1px solid #555555;
-        }
     }
 
     .nfts__boxes {
         margin-top: 40px;
         display: flex;
         gap: 40px;
-        width: 390px;
+        min-width: 430px;
         overflow-x: scroll;
-        white-space: nowrap;
         padding-left: 32px;
+
+        .forth__box {
+            margin-right: 32px;
+        }
 
         .nft__box {
             
@@ -276,16 +279,19 @@ main {
     position: relative;
     border-bottom: 1px solid #EEEEEE;
     padding-left: 32px;
+    display: grid;
+    grid-template-columns: 207px;
+    overflow: hidden;
 
     .graphic__background--footer {
         position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 90px;
-        left: 120px;
-        background-size: 400px 430px;
-        background-repeat: no-repeat;
-        background-image: url(assets/upsell-footer-image.svg);
+        top: 106px;
+        left: 255px;
+
+        img {
+            width: 206px;
+            height: 430px;
+        }
     }
 
     h2 {
@@ -304,7 +310,6 @@ main {
         line-height: 58px;
         font-weight: 900;
         font-style: normal;
-        width: 207px;
     }
 
     .footer__upsell--paragraph {
@@ -314,7 +319,6 @@ main {
         font-style: normal;
         color: #555555;
         margin-bottom: 30px;
-        width: 207px;
     }
 
     button {
@@ -352,6 +356,10 @@ main {
         .footer__heading--icons {
             display: flex;
             gap: 1rem;
+
+            a {
+                color: #999999;
+            }
         }
     }
 
@@ -397,6 +405,7 @@ footer {
 
     .page__copyright {
         padding-bottom: 105px;
+
         span {
             color: #999999;
             font-style: normal;
