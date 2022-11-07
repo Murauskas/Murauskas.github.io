@@ -42,7 +42,7 @@ main {
 }
 .hero .graphic__background {
   position: absolute;
-  left: 220px;
+  left: 190px;
   bottom: 80px;
 }
 .hero .graphic__background img {
@@ -52,7 +52,7 @@ main {
 .hero h2 {
   color: #FF3998;
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 19px;
   font-weight: 700;
   font-style: normal;
@@ -60,13 +60,13 @@ main {
 }
 .hero .hero__heading {
   margin: 24px 0;
-  font-size: 3rem;
+  font-size: 48px;
   line-height: 58px;
   font-weight: 900;
   font-style: normal;
 }
 .hero .hero__heading--paragraph {
-  font-size: 1.25rem;
+  font-size: 20px;
   line-height: 150%;
   font-weight: 400;
   font-style: normal;
@@ -74,7 +74,7 @@ main {
   margin-bottom: 30px;
 }
 .hero button {
-  font-size: 1.25rem;
+  font-size: 20px;
   line-height: 150%;
   font-weight: 600;
   color: #111111;
@@ -112,18 +112,28 @@ main {
 
 .press {
   grid-area: press;
-  display: grid;
-  grid-template-columns: auto-fit, minmax(250px, 600px);
-  grid-template-rows: 80px 80px 0;
+  display: flex;
+  flex-flow: wrap;
+  gap: 9px;
   margin-top: 70px;
   padding: 0 32px;
 }
 .press .company-1 {
   margin-left: -80px;
 }
+.press .company-boomerang {
+  display: none;
+}
 .press .company-5 {
   grid-column: 2/3;
   grid-row: 2/3;
+}
+.press .company-3 {
+  grid-column: 2/3;
+  grid-row: -4/-3;
+}
+.press .desktop-only {
+  display: none;
 }
 
 .showcase {
@@ -155,13 +165,14 @@ main {
 .showcase .nfts__boxes {
   margin-top: 40px;
   display: flex;
+  justify-content: space-between;
   gap: 40px;
   min-width: 430px;
   overflow-x: scroll;
-  padding-left: 32px;
+  margin-left: 32px;
 }
 .showcase .nfts__boxes .forth__box {
-  margin-right: 32px;
+  margin-right: 70px;
 }
 .showcase .nfts__boxes .nft__box .nft__box-bottom {
   display: flex;
@@ -240,8 +251,8 @@ main {
 }
 .footer__upsell .graphic__background--footer {
   position: absolute;
-  top: 106px;
-  left: 255px;
+  top: 107px;
+  left: 225px;
 }
 .footer__upsell .graphic__background--footer img {
   width: 206px;
@@ -339,15 +350,160 @@ main {
   line-height: 100%;
 }
 
-footer .page__copyright {
+.copyrights {
+  padding-left: 32px;
+}
+.copyrights .page__copyright,
+.copyrights .launching__EST {
   padding-bottom: 105px;
 }
-footer .page__copyright span {
+.copyrights .page__copyright span,
+.copyrights .launching__EST span {
   color: #999999;
   font-style: normal;
   font-weight: 300;
   font-size: 20px;
   line-height: 100%;
+}
+
+@media screen and (min-width: 700px) {
+  .wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  header {
+    padding: 40px 0 0 0;
+    grid-area: header;
+  }
+  header .desktop-only {
+    display: block;
+  }
+  header .header__navigation-menu {
+    display: none;
+  }
+  header .header__navigation ul {
+    display: flex;
+    gap: 28px;
+  }
+  header .header__navigation ul li {
+    list-style-type: none;
+  }
+  header .header__navigation ul li a {
+    text-decoration: none;
+    color: #555555;
+  }
+  header .header__navigation ul li .primary__color {
+    color: #FF3998;
+  }
+  .hero {
+    grid-area: hero;
+    display: flex;
+    gap: 150px;
+    padding-bottom: 0;
+    padding-left: 0;
+    max-width: 1280px;
+  }
+  .hero .graphic__background {
+    position: static;
+    top: -60px;
+    left: 10px;
+  }
+  .hero .graphic__background img {
+    width: 500px;
+    height: 500px;
+  }
+  .hero div {
+    max-width: 600px;
+  }
+  .hero h1 {
+    font-size: 112px;
+    line-height: 116px;
+  }
+  .hero p {
+    max-width: 470px;
+  }
+  .upsell {
+    max-width: 1280px;
+    grid-area: upsell;
+    margin-top: 0;
+    border-radius: 1rem;
+  }
+  .press {
+    max-width: 1280px;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    padding-right: 0;
+    padding-left: 0;
+    overflow: hidden;
+  }
+  .press .company-1 {
+    display: none;
+  }
+  .press .company-boomerang {
+    display: block;
+    margin-left: -110px;
+  }
+  .press .desktop-only {
+    display: block;
+  }
+  .showcase {
+    overflow: inherit;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 1280px;
+  }
+  .showcase .showcase__heading {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .showcase .nfts__boxes {
+    overflow-x: hidden;
+    margin-left: 0;
+    margin-right: 0;
+    flex-shrink: 1;
+  }
+  .footer__upsell {
+    display: flex;
+    gap: 233px;
+    padding-bottom: 0;
+    padding-left: 0;
+    max-width: 1280px;
+  }
+  .footer__upsell div {
+    max-width: 600px;
+  }
+  .footer__upsell p {
+    max-width: 450px;
+  }
+  .footer__upsell .graphic__background--footer {
+    position: static;
+  }
+  .footer__menu {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .footer__menu .footer__navigation {
+    gap: 50px;
+  }
+  .footer__menu .footer__navigation div {
+    width: calc(25% - 40px);
+  }
+  .copyrights {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-left: 0;
+  }
+  .copyrights .desktop-only {
+    display: block;
+  }
+  .copyrights .page__copyright,
+.copyrights .launching__EST {
+    padding-bottom: 50px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

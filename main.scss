@@ -51,7 +51,7 @@ main {
 
     .graphic__background {
         position: absolute;
-        left: 220px;
+        left: 190px;
         bottom: 80px;
         
 
@@ -64,7 +64,7 @@ main {
     h2 {
         color: $primary-color;
         text-transform: uppercase;
-        font-size: 1rem;
+        font-size: 16px;
         line-height: 19px;
         font-weight: 700;
         font-style: normal;
@@ -73,14 +73,14 @@ main {
 
     .hero__heading {
         margin: 24px 0;
-        font-size: 3rem;
+        font-size: 48px;
         line-height: 58px;
         font-weight: 900;
         font-style: normal;
     }
 
     .hero__heading--paragraph {
-        font-size: 1.25rem;
+        font-size: 20px;
         line-height: 150%;
         font-weight: 400;
         font-style: normal;
@@ -89,7 +89,7 @@ main {
     }
 
     button {
-        font-size: 1.25rem;
+        font-size: 20px;
         line-height: 150%;
         font-weight: 600;
         color: #111111;
@@ -131,9 +131,9 @@ main {
 
 .press {
     grid-area: press;
-    display: grid;
-    grid-template-columns: auto-fit, minmax(250px, 600px);
-    grid-template-rows: 80px 80px 0;
+    display: flex;
+    flex-flow: wrap;
+    gap: 9px;
     margin-top: 70px;
     padding: 0 32px;
     
@@ -141,11 +141,23 @@ main {
         margin-left: -80px;
     }
 
+    .company-boomerang {
+        display: none;
+    }
+
     .company-5 {
         grid-column: 2 / 3;
         grid-row: 2 / 3;
     }
 
+    .company-3 {
+        grid-column: 2 / 3;
+        grid-row: -4 / -3;
+    }
+
+    .desktop-only {
+        display: none;
+    }
 }
 
 .showcase {
@@ -182,13 +194,14 @@ main {
     .nfts__boxes {
         margin-top: 40px;
         display: flex;
+        justify-content: space-between;
         gap: 40px;
         min-width: 430px;
         overflow-x: scroll;
-        padding-left: 32px;
+        margin-left: 32px;
 
         .forth__box {
-            margin-right: 32px;
+            margin-right: 70px;
         }
 
         .nft__box {
@@ -285,8 +298,8 @@ main {
 
     .graphic__background--footer {
         position: absolute;
-        top: 106px;
-        left: 255px;
+        top: 107px;
+        left: 225px;
 
         img {
             width: 206px;
@@ -401,9 +414,11 @@ main {
     }
 }
 
-footer {
+.copyrights {
+    padding-left: 32px;
 
-    .page__copyright {
+    .page__copyright,
+    .launching__EST {
         padding-bottom: 105px;
 
         span {
@@ -412,6 +427,181 @@ footer {
             font-weight: 300;
             font-size: 20px;
             line-height: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: 700px){
+
+    .wrapper {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 32px;
+    }
+
+    header {
+        padding: 40px 0 0 0;
+        grid-area: header;
+
+        .desktop-only {
+            display: block;
+        }
+
+        .header__navigation-menu {
+            display: none;
+        }
+
+        .header__navigation ul {
+            display: flex;
+            gap: 28px;
+
+            li {
+                list-style-type: none;
+
+                a {
+                    text-decoration: none;
+                    color: #555555;
+                }
+
+                .primary__color {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+
+    .hero {
+        grid-area: hero;
+        // grid-template-columns: repeat(auto-fit,minmax(274px, 1fr));
+        display: flex;
+        gap: 150px;
+        padding-bottom: 0;
+        padding-left: 0;
+        max-width: 1280px;
+
+
+        .graphic__background {
+            position: static;
+            top: -60px;
+            left: 10px;
+
+            img {
+                width: 500px;
+                height: 500px;
+            }
+        }
+
+        div {
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 112px;
+            line-height: 116px;
+        }
+
+        p {
+            max-width: 470px;
+        }
+    }
+
+    .upsell {
+        max-width: 1280px;
+        grid-area: upsell;
+        margin-top: 0;
+        border-radius: 1rem;
+    }
+
+    .press {
+        max-width: 1280px;
+        justify-content: space-between;
+        padding-bottom: 50px;
+        padding-right: 0;
+        padding-left: 0;
+        overflow: hidden;
+
+        .company-1 {
+            display: none;
+        }
+
+        .company-boomerang {
+            display: block;
+            margin-left: -110px;
+        }
+
+        .desktop-only {
+            display: block;
+        }
+    }
+
+    .showcase {
+        overflow: inherit;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 1280px;
+
+        .showcase__heading {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .nfts__boxes {
+            overflow-x: hidden;
+            margin-left: 0;
+            margin-right: 0;
+            flex-shrink: 1;
+        }
+    }
+
+    .footer__upsell {
+        display: flex;
+        gap: 233px;
+        padding-bottom: 0;
+        padding-left: 0;
+        max-width: 1280px;
+
+
+        div {
+            max-width: 600px;
+        }
+
+        p {
+            max-width: 450px;
+        }
+
+        .graphic__background--footer {
+            position: static;
+        }
+    }
+
+    .footer__menu {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 0;
+        padding-left: 0;
+
+        .footer__navigation {
+             gap: 50px;
+
+            div {
+                width: calc(100% / 4 - 40px);
+            }
+        }
+    }
+
+    .copyrights {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        padding-left: 0;
+
+        .desktop-only {
+            display: block;
+        }
+
+        .page__copyright,
+        .launching__EST {
+            padding-bottom: 50px;
         }
     }
 }
